@@ -16,9 +16,11 @@ def main():
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api}&units=metric"
     response = requests.get(url)
     
+    os.system('clear')
+    
     if response.status_code == 200:
         weather_data = response.json()
-        print(f"Weather in {city}: {weather_data['weather'][0]['description']}")
+        print(f"Weather in {city.title()}: {weather_data['weather'][0]['description']}")
         print(f"Temperature: {weather_data['main']['temp']}°C")
     else:
         print("Error:", response.status_code)

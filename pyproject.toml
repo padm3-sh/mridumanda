@@ -17,6 +17,7 @@ packages = [{include = "mridu_manda", from = "src"}]
 
 [tool.poetry.scripts]
 mridu_manda = "mridu_manda.main:main"
+mrdmnd = "mridu_manda.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
