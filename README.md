@@ -8,6 +8,7 @@
 
 - 🔍 Fetch current weather by city name
 - 🌡️ Displays temperature and condition
+- 🌆 Automatic City detection
 
 ---
 
