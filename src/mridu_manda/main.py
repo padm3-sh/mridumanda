@@ -1,5 +1,4 @@
 import requests
-import json
 import time
 import os
 from mridu_manda import setup_mridumanda
@@ -24,13 +23,17 @@ def main():
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api}&units=metric"
     response = requests.get(url)
     
-    time.sleep(3)
+    time.sleep(1)
     os.system('clear')
     
     if response.status_code == 200:
         weather_data = response.json()
-        print(f"Weather in {city.title()}: {weather_data['weather'][0]['description'].title()}")
-        print(f"Temperature: {weather_data['main']['temp']}°C")
+        print(f"City \t\t : {city.title()}")
+        print(f"Weather \t : {weather_data['weather'][0]['description'].title()}")
+        print(f"Temperature \t : {weather_data['main']['temp']}°C")
+        print(f"Feels like \t : {weather_data['main']['feels_like']}°C")
+        print(f"Humidity \t : {weather_data['main']['humidity']}%")
+        
     else:
         print("Error:", response.status_code)
         
