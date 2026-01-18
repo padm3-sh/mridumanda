@@ -21,10 +21,26 @@
 
 ---
 
+## Usage
+
+For automatic city detection
+
+```
+poetry run mrdmnd
+```
+For manual city enter
+```
+poetry run mrdmnd -m
+```
+
 ## Presentation
 
 - => Default
+
 ![Default weather presentation](assets/default.png)
+- => OneLiner
+
+![OneLiner weather presentation](assets/oneliner.png)
 
 ## 📍 Note
 

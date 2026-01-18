@@ -1,8 +1,8 @@
 import requests
+import sys
 import time
 import os
 from mridu_manda import setup_mridumanda
-
 
 
 city_weather = None
@@ -15,9 +15,53 @@ humidity = None
 def main():
     setup_mridumanda.setup()
     
+    c_arg = sys.argv[1]
+    if len(c_arg) > 0 and c_arg == "-m":
+        manual_city() 
+    else:
+        auto_city()
+    
+    
+def auto_city():
     print("Welcome to MriduManda")
     print("Fetching city...")
     city = get_city()
+    path_to_api = os.path.join(os.path.expanduser("~"), ".mridumanda", "api.txt")
+    api = None
+    
+    with open (path_to_api, "r") as file:
+        line = file.readline()
+        
+        if ":" in line:
+            key, value = line.strip().split(":", 1)
+            api = value
+    
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api}&units=metric"
+    response = requests.get(url)
+    
+    time.sleep(1)
+    os.system('clear')
+    
+    if response.status_code == 200:
+        access_weather(response.json(), city)
+        
+    else:
+        print("Error:", response.status_code)
+    
+    weather_style = input("Enter option (default / one liner): ")
+    
+    if weather_style.lower() == "o":
+        print_weather_one_line()
+    else:
+        print_weather()
+
+
+def manual_city():
+    setup_mridumanda.setup()
+    
+    print("Welcome to MriduManda")
+    
+    city = input("Enter a city: ")
     path_to_api = os.path.join(os.path.expanduser("~"), ".mridumanda", "api.txt")
     api = None
     
