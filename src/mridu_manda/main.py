@@ -5,6 +5,7 @@ import os
 from mridu_manda import setup_mridumanda
 
 
+
 city_weather = None
 weather = None
 temperature = None
@@ -12,11 +13,12 @@ feels_like = None
 humidity = None
 
 
+
 def main():
     setup_mridumanda.setup()
     
-    c_arg = sys.argv[1]
-    if len(c_arg) > 0 and c_arg == "-m":
+    # c_arg = sys.argv[1]
+    if (len(sys.argv) > 1) and (sys.argv[1] == "-m"):
         manual_city() 
     else:
         auto_city()
@@ -48,12 +50,7 @@ def auto_city():
     else:
         print("Error:", response.status_code)
     
-    weather_style = input("Enter option (default / one liner): ")
-    
-    if weather_style.lower() == "o":
-        print_weather_one_line()
-    else:
-        print_weather()
+    weather_choice()
 
 
 def manual_city():
@@ -85,12 +82,7 @@ def manual_city():
         print("Error:", response.status_code)
     
     
-    weather_style = input("Enter option (default / one liner): ")
-    
-    if weather_style.lower() == "o":
-        print_weather_one_line()
-    else:
-        print_weather()
+    weather_choice()
 
 
 def access_weather(weather_data, city):
@@ -101,6 +93,7 @@ def access_weather(weather_data, city):
     temperature = weather_data['main']['temp']
     feels_like = weather_data['main']['feels_like']
     humidity = weather_data['main']['humidity']
+    
       
 def get_city():
     ipinfo_data = requests.get("https://www.ipinfo.io/json")
@@ -109,8 +102,17 @@ def get_city():
     return city
 
 
+def weather_choice():
+    weather_style = input("Enter option (default / one liner): ")
+    
+    if weather_style.lower() == "o":
+        print_weather_one_line()
+    else:
+        print_weather()
+
+
 def print_weather():
-    print(f"City \t\t : {city_weather}")
+    print(f"City \t\t : {str.capitalize(city_weather)}")
     print(f"Weather \t : {weather}")
     print(f"Temperature \t : {temperature}°C")
     print(f"Feels like \t : {feels_like}°C")
@@ -118,4 +120,4 @@ def print_weather():
 
 
 def print_weather_one_line():
-    print(f"City: {city_weather}   |   Weather: {weather}   |   Temperature: {temperature}")
+    print(f"City: {str.capitalize(city_weather)}   |   Weather: {weather}   |   Temperature: {temperature}°C")

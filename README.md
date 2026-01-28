@@ -42,6 +42,9 @@ poetry run mrdmnd -m
 
 ![OneLiner weather presentation](assets/oneliner.png)
 
+## Changelog
+For complete changelog visit this [link](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md).
+
 ## 📍 Note
 
 This project is a rewritten version of the original MriduManda, which was developed under another GitHub account of mine in [this](https://github.com/shvedt/mridu-manda.git) repo. That account is no longer accessible, and as a result, the project is being completely rebuilt here from scratch — keeping its original purpose, but with improved clarity, structure, and maintainability.
