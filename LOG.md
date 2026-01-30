@@ -1,3 +1,6 @@
+# Version 0.9
+- Added support for saving weather reports
+
 # Version 0.8
 - Slight code improvements
 - Fixed the error when running without any commandline argument
