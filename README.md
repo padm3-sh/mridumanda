@@ -21,7 +21,7 @@
 
 ---
 
-## Usage
+## 🛠️ Usage
 
 For automatic city detection
 
@@ -33,7 +33,7 @@ For manual city enter
 poetry run mrdmnd -m
 ```
 
-## Presentation
+## 🎑 Presentation 
 
 - => Default
 
@@ -42,8 +42,13 @@ poetry run mrdmnd -m
 
 ![OneLiner weather presentation](assets/oneliner.png)
 
-## Changelog
-For complete changelog visit this [link](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md).
+## 📝 Changelog
+
+# Version 1.0 (Latest release)
+- Added minimum and maximum temperature, pressure
+- Minor code improvements
+- ASCII arts were also added which will be incorporated into the code at later updates
+The complete [changelog](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md) can be found here.
 
 ## 📍 Note
 

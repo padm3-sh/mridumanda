@@ -3,9 +3,8 @@ import requests
 import sys
 import time
 import os
-from datetime import date
-from mridu_manda import setup_mridumanda
-from mridu_manda import setup_weather_data
+from datetime import date, timedelta
+from mridu_manda import setup_mridumanda, setup_weather_data
 
 
 
@@ -14,6 +13,9 @@ weather = None
 temperature = None
 feels_like = None
 humidity = None
+temperature_max = None
+temperature_min = None
+pressure = None
 
 
 
@@ -92,13 +94,16 @@ def manual_city():
 
 
 def access_weather(weather_data, city):
-    global city_weather, weather, temperature, feels_like, humidity
+    global city_weather, weather, temperature, feels_like, humidity, temperature_max, temperature_min, pressure
     
     city_weather = city
     weather = weather_data['weather'][0]['description'].title()
     temperature = weather_data['main']['temp']
     feels_like = weather_data['main']['feels_like']
     humidity = weather_data['main']['humidity']
+    pressure = weather_data['main']['pressure']
+    temperature_max = weather_data['main']['temp_max']
+    temperature_min = weather_data['main']['temp_min']
     
       
 def get_city():
@@ -118,17 +123,22 @@ def weather_choice():
 
 
 def print_weather():
-    print(f"City \t\t : {str.capitalize(city_weather)}")
-    print(f"Weather \t : {weather}")
-    print(f"Temperature \t : {temperature}°C")
-    print(f"Feels like \t : {feels_like}°C")
-    print(f"Humidity \t : {humidity}")
+    os.system('clear')
+    print(f"City \t\t\t\t : {str.capitalize(city_weather)}")
+    print(f"Weather \t\t\t : {weather}")
+    print(f"Temperature \t\t\t : {temperature}°C")
+    print(f"Feels like \t\t\t : {feels_like}°C")
+    print(f"Temperature (Max) \t\t : {temperature_max}°C")
+    print(f"Temperature (Min) \t\t : {temperature_min}°C")
+    print(f"Humidity \t\t\t : {humidity}")
+    print(f"Pressure \t\t\t : {pressure}")
     
     save_weather()
 
 
 def print_weather_one_line():
-    print(f"City: {str.capitalize(city_weather)}   |   Weather: {weather}   |   Temperature: {temperature}°C")
+    os.system('clear')
+    print(f"City: {str.capitalize(city_weather)}   |   Weather: {weather}   |   Temperature: {temperature}°C   |   Pressure: {pressure}")
     
     save_weather()
 

@@ -1,3 +1,8 @@
+# Version 1.0
+- Added minimum and maximum temperature, pressure
+- Minor code improvements
+- ASCII arts were also added which will be incorporated into the code at later updates
+
 # Version 0.9
 - Added support for saving weather reports
 
