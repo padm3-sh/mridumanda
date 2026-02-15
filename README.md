@@ -18,6 +18,7 @@
 - [Requests](https://pypi.org/project/requests/) for HTTP communication
 - JSON for data handling
 - Poetry for dependency management
+- [Rich](https://pypi.org/project/rich/) for Beautiful Weather Disclosure
 
 ---
 
@@ -44,10 +45,10 @@ poetry run mrdmnd -m
 
 ## 📝 Changelog
 
-# Version 1.0 (Latest release)
-- Added minimum and maximum temperature, pressure
-- Minor code improvements
-- ASCII arts were also added which will be incorporated into the code at later updates
+# Version 1.0.1 (Latest release)
+- Added rich support
+- Added one new weather report where weather information will be showcased using colours. 
+
 The complete [changelog](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md) can be found here.
 
 ## 📍 Note

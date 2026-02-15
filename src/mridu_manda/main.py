@@ -3,8 +3,10 @@ import requests
 import sys
 import time
 import os
-from datetime import date, timedelta
+from datetime import date
 from mridu_manda import setup_mridumanda, setup_weather_data
+from rich.console import Console
+from rich.table import Table
 
 
 
@@ -114,10 +116,12 @@ def get_city():
 
 
 def weather_choice():
-    weather_style = input("Enter option (default / one liner): ")
+    weather_style = input("Enter option (default / one liner / formatted one liner): ")
     
     if weather_style.lower() == "o":
         print_weather_one_line()
+    elif weather_style.lower() == "f":
+        print_formatted_oneliner()
     else:
         print_weather()
 
@@ -143,6 +147,18 @@ def print_weather_one_line():
     save_weather()
 
 
+def print_formatted_oneliner():
+    os.system('clear')
+    weather_console = Console()
+    weather_table = Table(show_header=False, border_style="bold green")
+    
+    weather_table.add_row(f"{str.capitalize(city_weather)}", f"{weather}", f"{temperature}°C", f"{pressure} hPa", style="bold")
+    
+    weather_console.print(weather_table)
+    
+    save_weather()
+    
+    
 def save_weather():    
     
     setup_weather_data.setup()
