@@ -1,3 +1,6 @@
+# Version 1.0.2
+- Improved error handling for weather report fetching and automatic city detection
+
 # Version 1.0.1
 - Added rich support
 - Added one new weather report where weather information will be showcased using colours. 

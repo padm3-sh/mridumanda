@@ -37,6 +37,7 @@ def auto_city():
     
     print("Welcome to MriduManda")
     print("Fetching city...")
+    time.sleep(1)
     city = get_city()
     path_to_api = os.path.join(os.path.expanduser("~"), ".mridumanda", "api.txt")
     api = None
@@ -49,7 +50,13 @@ def auto_city():
             api = value
     
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api}&units=metric"
-    response = requests.get(url)
+    
+    try:
+        response = requests.get(url)
+    except:
+        print("There was an error while fetching weather report!")
+        print("Try again later.")
+        sys.exit()
     
     time.sleep(1)
     os.system('clear')
@@ -80,7 +87,13 @@ def manual_city():
             api = value
     
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api}&units=metric"
-    response = requests.get(url)
+    
+    try:
+        response = requests.get(url)
+    except:
+        print("There was an error while fetching weather report!")
+        print("Try again later.")
+        sys.exit()
     
     time.sleep(1)
     os.system('clear')
@@ -109,9 +122,14 @@ def access_weather(weather_data, city):
     
       
 def get_city():
-    ipinfo_data = requests.get("https://www.ipinfo.io/json")
-    city = ipinfo_data.json().get('city')
-    
+    try:
+        ipinfo_data = requests.get("https://www.ipinfo.io/json")
+        city = ipinfo_data.json().get('city')
+    except:
+        os.system('clear')
+        print("There was a problem fetching your home town!")
+        print("Kindly try manual city enter option.")
+        sys.exit()
     return city
 
 
@@ -151,7 +169,7 @@ def print_formatted_oneliner():
     os.system('clear')
     weather_console = Console()
     weather_table = Table(show_header=False, border_style="bold green")
-    
+
     weather_table.add_row(f"{str.capitalize(city_weather)}", f"{weather}", f"{temperature}°C", f"{pressure} hPa", style="bold")
     
     weather_console.print(weather_table)

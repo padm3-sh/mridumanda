@@ -45,9 +45,8 @@ poetry run mrdmnd -m
 
 ## 📝 Changelog
 
-# Version 1.0.1 (Latest release)
-- Added rich support
-- Added one new weather report where weather information will be showcased using colours. 
+# Version 1.0.2 (Latest release)
+- Improved error handling for weather report fetching and automatic city detection
 
 The complete [changelog](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md) can be found here.
 
