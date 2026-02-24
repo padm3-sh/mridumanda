@@ -1,3 +1,7 @@
+# Version 1.0.3
+- Added new weather printing option, ```formatted```
+- Improved ```README.md```
+
 # Version 1.0.2
 - Improved error handling for weather report fetching and automatic city detection
 

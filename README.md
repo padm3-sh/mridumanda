@@ -36,17 +36,31 @@ poetry run mrdmnd -m
 
 ## 🎑 Presentation 
 
-- => Default
+- Default --- ```just press enter or 'd' when asked for weather print options```
 
 ![Default weather presentation](assets/default.png)
-- => OneLiner
+
+
+- OneLiner --- ```press 'o' when asked for weather print options```
 
 ![OneLiner weather presentation](assets/oneliner.png)
 
+
+
+- Formatted --- ```press 'f' when asked for weather print options```
+
+![Formatted weather presentation](assets/formatted.png)
+
+
+- Formatted OneLiner --- ```press 'fo' when asked for weather print options```
+
+![Formatted OneLiner weather presentation](assets/formatted-oneliner.png)
+
 ## 📝 Changelog
 
-# Version 1.0.2 (Latest release)
-- Improved error handling for weather report fetching and automatic city detection
+# Version 1.0.3 (Latest release)
+- Added new weather printing option, ```formatted```
+- Improved ```README.md```
 
 The complete [changelog](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md) can be found here.
 

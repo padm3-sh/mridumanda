@@ -11,6 +11,7 @@ from rich.table import Table
 
 
 city_weather = None
+country = None
 weather = None
 temperature = None
 feels_like = None
@@ -109,9 +110,10 @@ def manual_city():
 
 
 def access_weather(weather_data, city):
-    global city_weather, weather, temperature, feels_like, humidity, temperature_max, temperature_min, pressure
+    global city_weather, country, weather, temperature, feels_like, humidity, temperature_max, temperature_min, pressure
     
     city_weather = city
+    country = weather_data['sys']['country']
     weather = weather_data['weather'][0]['description'].title()
     temperature = weather_data['main']['temp']
     feels_like = weather_data['main']['feels_like']
@@ -138,8 +140,10 @@ def weather_choice():
     
     if weather_style.lower() == "o":
         print_weather_one_line()
-    elif weather_style.lower() == "f":
+    elif weather_style.lower() == "fo":
         print_formatted_oneliner()
+    elif weather_style.lower() == "f":
+        print_formatted_weather()
     else:
         print_weather()
 
@@ -168,7 +172,7 @@ def print_weather_one_line():
 def print_formatted_oneliner():
     os.system('clear')
     weather_console = Console()
-    weather_table = Table(show_header=False, border_style="bold green")
+    weather_table = Table(show_header=False, border_style="bold blue")
 
     weather_table.add_row(f"{str.capitalize(city_weather)}", f"{weather}", f"{temperature}°C", f"{pressure} hPa", style="bold")
     
@@ -176,7 +180,29 @@ def print_formatted_oneliner():
     
     save_weather()
     
-    
+
+def print_formatted_weather():
+    os.system('clear')
+
+    weather_console = Console()
+    table_title = f"Weather Report for {str.capitalize(city_weather)}, {country}"
+
+    weather_table = Table(show_header=False, border_style="dim")
+
+    weather_table.add_row("Temperature", f"{temperature}°C")
+    weather_table.add_row("Humidity", f"{humidity}%")
+    weather_table.add_row("Temperature (Max)", f"{temperature_max}°C")
+    weather_table.add_row("Temperature (Min)", f"{temperature_min}°C")
+    weather_table.add_row("Condition", f"{weather}")
+    weather_table.add_row("Pressure", f"{pressure} hPa")
+
+    weather_console.print(table_title, justify="center", style="bold italic")
+    weather_console.print(("-" * (len(table_title) - 4)), justify="center")
+    weather_console.print(weather_table, justify="center")
+
+    save_weather()
+
+
 def save_weather():    
     
     setup_weather_data.setup()
