@@ -1,3 +1,7 @@
+# Version 1.0.4
+- Implemented ascii arts for beautiful display of weather
+- Slight improvements in code
+
 # Version 1.0.3
 - Added new weather printing option, ```formatted```
 - Improved ```README.md```

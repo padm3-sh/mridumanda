@@ -41,24 +41,28 @@ poetry run mrdmnd -m
 ![Default weather presentation](assets/default.png)
 
 
-- OneLiner --- ```press 'o' when asked for weather print options```
+- OneLiner --- ```enter 'o' when asked for weather print options```
 
 ![OneLiner weather presentation](assets/oneliner.png)
 
 
 
-- Formatted --- ```press 'f' when asked for weather print options```
+- Formatted --- ```enter 'f' when asked for weather print options```
 
 ![Formatted weather presentation](assets/formatted.png)
 
 
-- Formatted OneLiner --- ```press 'fo' when asked for weather print options```
+- Formatted OneLiner --- ```enter 'fo' when asked for weather print options```
 
 ![Formatted OneLiner weather presentation](assets/formatted-oneliner.png)
 
+
+- Ascii --- ```enter 'a' when asked for weather print options```
+
+![Weather presentation with Ascii Arts](assets/ascii.png)
 ## 📝 Changelog
 
-# Version 1.0.3 (Latest release)
+# Version 1.0.4 (Latest release)
 - Added new weather printing option, ```formatted```
 - Improved ```README.md```
 
