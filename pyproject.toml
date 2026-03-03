@@ -1,6 +1,6 @@
 [project]
 name = "mridu-manda"
-version = "1.0.4"
+version = "1.0.5"
 description = ""
 authors = [
     {name = "Shvetank Dattatreya", email = "hello.shvetank@gmail.com"}

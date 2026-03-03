@@ -60,10 +60,18 @@ poetry run mrdmnd -m
 - Ascii --- ```enter 'a' when asked for weather print options```
 
 ![Weather presentation with Ascii Arts](assets/ascii.png)
+
+
+## Attributions
+
+Like the original version of mine, this version also uses the ASCII art for weather representation. These representations (ASCII arts) were created by [Julynx](https://github.com/Julynx). It was taken from [here](https://github.com/Julynx/wthr).
+
+
 ## 📝 Changelog
 
-# Version 1.0.4 (Latest release)
-- Added new weather printing option, ```formatted```
+# Version 1.0.5 (Latest release)
+- Refactored the code to improve performance
+- Miscellaneous code improvements
 - Improved ```README.md```
 
 The complete [changelog](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md) can be found here.
@@ -71,3 +79,4 @@ The complete [changelog](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md
 ## 📍 Note
 
 This project is a rewritten version of the original MriduManda, which was developed under another GitHub account of mine in [this](https://github.com/shvedt/mridu-manda.git) repo. That account is no longer accessible, and as a result, the project is being completely rebuilt here from scratch — keeping its original purpose, but with improved clarity, structure, and maintainability.
+

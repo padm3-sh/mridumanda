@@ -1,3 +1,8 @@
+# Version 1.0.5
+- Refactored the code to improve performance
+- Miscellaneous code improvements
+- Improved ```README.md```
+
 # Version 1.0.4
 - Implemented ascii arts for beautiful display of weather
 - Slight improvements in code
