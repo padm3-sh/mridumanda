@@ -33,6 +33,8 @@ def get_api_key():
 def setup_mrdmnd_api():
     
     os.system("mkdir -p $HOME/.mridumanda")
+    os.system("clear")
+    print("There is no saved API key!")
     
     api_key = input("Enter your api key: ")
     

@@ -1,3 +1,6 @@
+# Version 1.0.6
+- Improved interactivity of the application to ask for API key if it is not there.
+
 # Version 1.0.5
 - Refactored the code to improve performance
 - Miscellaneous code improvements

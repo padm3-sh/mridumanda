@@ -69,12 +69,10 @@ Like the original version of mine, this version also uses the ASCII art for weat
 
 ## 📝 Changelog
 
-# Version 1.0.5 (Latest release)
-- Refactored the code to improve performance
-- Miscellaneous code improvements
-- Improved ```README.md```
+# Version 1.0.6 (Latest release)
+- Improved interactivity of the application to ask for API key if it is not there.
 
-The complete [changelog](https://github.com/padm3-sh/mridumanda/blob/main/LOG.md) can be found here.
+The complete [changelog](https://github.com/shved-t/mridumanda/blob/main/LOG.md) can be found here.
 
 ## 📍 Note
 
